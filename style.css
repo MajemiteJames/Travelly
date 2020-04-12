@@ -43,6 +43,11 @@ button {
     border: none;
     color: white;
     font-size: 1.8rem;
+    transition: background 1s ease-in-out;
+}
+
+button:hover{
+    background: #1c2b3d;
 }
 /* Global style end */
 
@@ -93,6 +98,64 @@ nav ul {
     padding: 4rem;
 }
 
+/* nav section with HERO ends */
+
+/* Locations section */
+
+#locations {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), transparent),url('./img/new-york-page.png ');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.locations-head {
+    width: 90%;
+    margin: auto;
+}
+.locations-head h2 {
+    padding: 1rem 0rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5rem;
+}
+.locations-head span {
+    padding: 4rem 0rem;
+    background: linear-gradient(#131c27, #e74026);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cloud {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+.moving-cloud-1 {
+    animation: cloudAnimation 3.5s infinite alternate ease-in-out;
+}
+
+.moving-cloud-2 {
+    top: 10%;
+    z-index: -1;
+    opacity: 0.5;
+    animation: cloudAnimation 4s infinite alternate ease-in-out;
+}
+
+@keyframes cloudAnimation{
+    from{
+        transform: translate(10%, -10%);
+    }
+    to{
+        transform: translate(0%, 0%);
+    }
+}
+/* Locations section ends */
+
+/*  media query */
 @media screen and (max-width: 932px){
     html {
         font-size: 45%;
@@ -103,5 +166,18 @@ nav ul {
     #logo {
         padding: 2rem;
     }
+    .cloud{
+        height: 50rem;
+        pointer-events: none;
+    }
+    .moving-cloud-1{
+        z-index: -1;
+    }
+    .moving-cloud-2{
+        z-index: -2;
+    }
+    .locations-head h3 {
+        background: rgba(19,28,39,0.9);
+        -webkit-text-fill-color: white;
+    }
 }
-/* nav section with HERO ends */
