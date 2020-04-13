@@ -56,6 +56,9 @@ button:hover{
 .main-head {
     background: #131c27;
     color: white;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
 }
 
 nav {
@@ -228,7 +231,7 @@ nav ul {
     padding: 4rem;
 }
 
-.name-form, .email-form {
+.name-form, .email-form, .message-form {
     text-align: center;
     padding: 3rem;
 }
@@ -247,6 +250,14 @@ nav ul {
 
 .form-wrapper input {
     padding: 1rem 3rem;
+}
+
+#styled {
+    width: 40%;
+    height: 100px;
+    border: 3px solid #cccccc;
+    text-align: center;
+    padding: 5px;
 }
 /*  contact ends */
 
@@ -307,6 +318,8 @@ footer ul {
     }
     .form-wrapper {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     footer {
         text-align: center;
@@ -315,3 +328,16 @@ footer ul {
         padding-bottom: 3rem;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .message-form, .email-form,.name-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #styled {
+        width: 70%;
+    }
+  }
